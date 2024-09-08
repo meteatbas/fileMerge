@@ -60,12 +60,11 @@ public class SmartinFileOperationApplication {
             PrintStream ps = new PrintStream(f);
 
             for (var entry : ipDnsMap.entrySet()) {
-                System.out.println(entry.getKey());
                 ps.print(entry.getValue() + " " + entry.getKey());
                 ps.println();
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
