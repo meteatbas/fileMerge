@@ -18,7 +18,7 @@ public class SmartinFileOperationApplication {
     public static void main(String[] args)  {
         SpringApplication.run(SmartinFileOperationApplication.class, args);
 
-        String hostFile="C:\\Users\\yasemin\\Desktop\\Smartin\\hosts.txt";
+        String hostFile="error";
         String myHostFile="C:\\Users\\yasemin\\Desktop\\Smartin\\MyHost.txt";
 
         if(!new File(myHostFile).isFile() && !new File(myHostFile).isDirectory()) {
@@ -60,6 +60,7 @@ public class SmartinFileOperationApplication {
             PrintStream ps = new PrintStream(f);
 
             for (var entry : ipDnsMap.entrySet()) {
+                System.out.println(entry.getKey());
                 ps.print(entry.getValue() + " " + entry.getKey());
                 ps.println();
             }
